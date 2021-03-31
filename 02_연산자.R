@@ -34,3 +34,29 @@ letters
 LETTERS
 
 # 평상시 자주 활용할 내장 함수 & 상수형 변수
+
+pi
+
+# 삼각함수
+sin(pi/3)
+cos(pi/3)
+tan(pi/3)
+
+abs(-3)
+abs(3)
+
+n = 1728.2839
+round(n)
+round(n, 3)
+round(n, 2)
+round(n, 1)
+round(n, -3)
+round(n, -2)
+round(n, -1)
+
+n = 1728.2839
+floor(n*10)/10
+ceiling(n/100) * 100
+
+factorial(4)
+factorial(6)

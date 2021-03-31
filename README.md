@@ -439,6 +439,17 @@ bbb = aa[9:11, 2:4]
 table(aa$AWS_ID)
 ```
 
+## prop
+- 비율 반환
+```R
+prop.table(table(aa$AWS_ID)) # 테이블이 표시하는 값을 비율로 변환
+prop.table(table(aa$AWS_ID, aa$X.))
+prop.table(table(aa$AWS_ID, aa$X.))*100
+round(prop.table(table(aa$AWS_ID, aa$X.))*100)
+paste0(round(prop.table(table(aa$AWS_ID, aa$X.))*100, 1), '%')
+```
+
+
 # StringHandling
 
 
@@ -525,4 +536,28 @@ as.character(23)
 as.integer(123.123)
 as.numeric("123")
 as.character(23.45)
+```
+
+
+# Function
+
+## 정의
+- R의 함수는 __return구문없이 마지막 명령 실행결과가 리턴__
+```R
+funcName = function(x) {
+    # process
+}
+
+toSeq = function(df, col) { # 데이터프레임과 컬럼을 받고
+    df_split = cSplit(df, splitCols=col, sep=":") # 받은 DF와 컬럼을 구분자로 나누고
+
+    df_split = as.data.frame(df_split) # 연산가능하게 형변환
+
+    # (시->초) + (분->초) + (초)
+    (as.integer(df_split[, paste0(col, "_1")])
+    * 60 * 60) + 
+    (as.integer(df_split[, paste0(col, "_2")])
+    * 60) + 
+    (as.integer(df_split[, paste0(col, "_3")]))
+}
 ```

@@ -536,6 +536,7 @@ as.character(23)
 as.integer(123.123)
 as.numeric("123")
 as.character(23.45)
+as.data.frame(df) # dataframe의 특정 컬럼을 연산하고자 할 때
 ```
 
 

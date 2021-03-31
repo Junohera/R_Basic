@@ -76,6 +76,3 @@ toSeq = function(df, col) { # 데이터프레임과 컬럼을 받고
     prop.table(table(marathon_2015_2017$Year, marathon_2015_2017$Senior))*100
     round(prop.table(table(marathon_2015_2017$Year, marathon_2015_2017$Senior))*100)
     paste0(round(prop.table(table(marathon_2015_2017$Year, marathon_2015_2017$Senior))*100, 1), '%')
-    
-
-    

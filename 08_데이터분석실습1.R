@@ -39,7 +39,11 @@ library('splitstackshape')
 marathon_2017_clean[, 'Official.Time']
 
 splitOfficialTime = cSplit(marathon_2017_clean, splitCols='Official.Time', sep=':')[, c('Official.Time_1', 'Official.Time_2', 'Official.Time_3')]
+class(splitOfficialTime)
+is.data.frame(splitOfficialTime)
 splitOfficialTimeToCaracter = as.data.frame(splitOfficialTime)
+class(splitOfficialTimeToCaracter)
+is.data.frame(splitOfficialTimeToCaracter)
 marathon_2017_clean[, 'Final_Second'] = 
     (splitOfficialTime[, 'Official.Time_1'] * 60 * 60) +
     (splitOfficialTime[, 'Official.Time_2'] * 60) +

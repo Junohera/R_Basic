@@ -1,20 +1,22 @@
+# basic
 
-### R 프로그램의 주석처리 #
+
+## R 프로그램의 주석처리 #
 ```R
 # comment
 ```
 
-### 현재 작업 디렉토리(폴더)를 표시
+## 현재 작업 디렉토리(폴더)를 표시
 ```R
 getwd()
 ```
 
-### 기본 변수
+## 기본 변수
 ```R
 a = 123
 ```
 
-### 할당문
+## 할당문
 
 ```R
 b <- 123.45
@@ -25,20 +27,20 @@ b <- 123.45
 ```
 > 문자열은 ', " 구분없음
 
-### boolean
+## boolean
 ```R
 d <- TRUE
 ```
 > 대문자로 표기
 
-### 변수
+## 변수
 - 변수이름만 놓고 실행시, 해당 변수의 값이 출력
 - 타입이 없으므로, 할당되는 값에 따라 자료형이 결정
 ```R
 a
 ```
 --- 
-### Vector
+## Vector
 - 리스트와 비슷한 형태의 자료형
 - c(${elements})
 ```R
@@ -49,7 +51,7 @@ a = c(1, 2, 3, 4, 5)
 b = c(123, "asdf", 345)
 ```
 --- 
-### DataFrame
+## DataFrame
 - 벡터데이터를 필요한 열의 갯수만큼 넣어 구성
 - 벡터데이터를 담은 변수의 이름은 열제목
 - 각 벡터데이터의 길이가 다르면 에러 발생
@@ -59,7 +61,7 @@ a
 # data.frame(aa=c(1, 2, 3), bb = c("hi", "hello")) ERROR
 ```
 
-#### 성적표 dataframe화
+### 성적표 dataframe화
 | num | name | kor | eng | mat |
 |:---|:---:|---:|---:|---:|
 |1|홍길동|78|59|76|
@@ -78,7 +80,7 @@ practice1 = data.frame(
 ```
 --- 
 
-### Matrix(행렬)
+## Matrix(행렬)
 
 ```R
 a = matrix(c(1, 2, 3, 4, 5, 6), nrow=3, ncol=2)
@@ -86,11 +88,11 @@ b = matrix(c(1, 2, 3, 4, 5, 6), nrow=2, ncol=3)
 c = matrix(c(1, 2, 3, 4, 5), nrow=3, ncol=2)
 ```
 > R 프로그램의 행렬 구성시 원소수와 행, 열수가 맞지않을경우, 에러는 없고 경고메시지가 출력
-#### ⚠️ __부족한 공간을 0번째원소부터 순환하며 값을 채움.__
+### ⚠️ __부족한 공간을 0번째원소부터 순환하며 값을 채움.__
 
 --- 
 
-### List
+## List
 ```R
 a = list(
     aa=c(1, 2, 3)
@@ -99,7 +101,7 @@ a = list(
 )
 ```
 
-#### __리스트와 벡터의 차이점__
+### __리스트와 벡터의 차이점__
 
 ```R
 a = c(1, 2, 3, c(1, 2, 3), 4)
@@ -115,7 +117,7 @@ aa$a[3]
 
 # operator
 
-### 산술 연산
+## 산술 연산
 ```R
 30 + 50
 30 - 50
@@ -140,7 +142,7 @@ aa$a[3]
 2^3^2 # 2의 9승(<- 3의 2승)
 ```
 
-### 관계(비교)
+## 관계(비교)
 ```R
 n>20
 n<20
@@ -150,7 +152,8 @@ n==10
 n!=20
 ```
 
-### : 숫자 생성
+## 숫자 생성
+- :
 ```R
 1:5
 1.5:5
@@ -159,7 +162,7 @@ n!=20
 1:5 + 10
 ```
 
-### seq()
+## seq()
 ```R
 seq(from=1, to=10)
 seq(from=1, to=10, by=0.5)
@@ -167,7 +170,7 @@ seq(from=1, to=10, by=1.2)
 seq(from=1, to=10, length.out=8) # 1부터 10까지 8개로 균등 증가값 생성
 ```
 
-### rep()
+## rep()
 ```R
 rep(rep(1:3, 5))
 rep(1:3, times=5)
@@ -175,14 +178,14 @@ rep(1:3, each=5)
 rep('안녕하세요', 5)
 ```
 
-### letter(상수형 변수)
+## letter(상수형 변수)
 - 알파벳을 벡터 데이터로 갖고있음.
 ```R
 letters
 LETTERS
 ```
 
-### pi
+## pi
 ```R
 pi
 
@@ -193,13 +196,13 @@ tan(pi/3)
 ```
 
 
-### abs
+## abs
 ```R
 abs(-3)
 abs(3)
 ```
 
-### round
+## round
 ```R
 n = 1728.2839
 round(n) 		# 첫째자리 반올림
@@ -211,18 +214,20 @@ round(n, -2) 	# 십의자리 반올림 백의 자리까지
 round(n, -3) 	# 백의자리 반올림 천의 자리까지
 ```
 
-### ceiling & floor
+## ceiling & floor
 ```R
 n = 1728.2839
 floor(n*10)/10 			# 둘째자리에서 버림
 ceiling(n/100) * 100 	# 십의자리에서 올림
 ```
 
-### ! factorial
+## ! factorial
 ```R
 factorial(4)
 factorial(6)
 ```
+
+# dataHandling_1
 
 ```R
 read.csv("파일명")
@@ -304,6 +309,8 @@ dim(aa) # 행, 열
 colnames(aa)
 ```
 
+# dataHandling_2
+
 ### load data
 ```R
 aa = read.delim(
@@ -352,6 +359,8 @@ aa[c(4, 1, 2), c(4, 2, 1)]  # 4,1,2행, 4,2,1열
 ```
 
 
+# dataHandling_3
+
 ### load data
 ```R
 aa = read.delim(
@@ -381,6 +390,8 @@ colnames(aa)[7] = "col_7"
 colnames(aa)[7:8] = c("col_7_1", "col_8")
 head(aa, 1)
 ```
+
+# dataHandling_4
 
 ### load data
 ```R
@@ -426,4 +437,92 @@ bbb = aa[9:11, 2:4]
 - python의 value_counts
 ```R
 table(aa$AWS_ID)
+```
+
+# StringHandling
+
+
+### ready dataframe
+```R
+sample = data.frame(
+    aa=c('abc_adfsdf', 'abc_kkdfsfsfs', 'ccd')
+    , bb = 1:3
+    , stringsAsFactors = FALSE
+)
+```
+
+## nchar
+- 문자의 개수 반환
+```
+sample[1,1]
+nchar(sample[1,1])
+nchar(sample[2,1])
+```
+
+## which
+- 특정 문자열의 위치 확인
+```R
+which(sample[, 1] == 'ccd') # 한열의 모든 데이터를 제공하고, 특정 문자열의 위치를 확인하는 코드
+```
+
+## toupper & tolower
+```R
+toupper(sample[1,1])
+tolower(sample[2,1])
+```
+
+## install package
+- package 설치
+```R
+install.packages('splitstackshape')
+```
+
+## library
+- python의 import와 동일
+```R
+library('splitstackshape')
+```
+## cSplit
+- DF 문자열의 분리도구
+- sep 기준으로 컬럼의 문자열을 분리
+- 원본을 기준으로 반환(__원본 보존__)
+```R
+result = cSplit(sample, splitCols='aa', sep='_')
+```
+
+## paste
+- 문자열 붙이기
+    - 기본값 : 공백으로 구분
+    - 공백없이 - paste0()
+    - 구분자 지정
+```R
+paste(sample[, 1], sample[, 2])
+paste0(sample[, 1], sample[, 2])
+paste(sample[, 1], sample[, 2], sample[, 1], sep="@@@")
+```
+
+## substr
+- 문자 추출
+```R
+substr(sample[, 1], start=1, stop=2) # 1열에서 1~2
+substr(sample[, 1], start=1, stop=4) # 1열에서 1~4
+```
+
+## Casting
+1. logical
+1. numeric
+1. character
+1. integer
+
+```R
+as.logical("123")
+as.logical("")
+as.logical(123.12)
+as.logical(0)
+as.numeric("123")
+as.character(23.45)
+as.character(23)
+as.integer(123.123)
+as.numeric("123")
+as.character(23.45)
 ```

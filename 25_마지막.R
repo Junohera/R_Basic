@@ -95,3 +95,34 @@ ggplot(
     color = "#000000"
     , fill = "#FFFFFF"
 )
+
+
+shp@data
+
+ggplot(
+    data = df_shp
+    , aes(
+        x = long
+        , y = lat
+        , group = group
+        , fill = id
+    )
+) +
+    geom_polygon(color = "#000000")
+
+ggplot(
+    data = df_shp
+    , aes(
+        x = long
+        , y = lat
+        , group = group
+    )
+) +
+    geom_polygon(
+        fill = '#FFFFFF'
+        , color = '#000000'
+    ) +
+    geom_polygon(
+        data = df_shp[df_shp$id == 16,]
+        , fill = '#FF0000'
+    )

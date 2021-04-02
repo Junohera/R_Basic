@@ -25,6 +25,16 @@ library('ggplot2')
         scale_color_manual(
             values = c("M"="blue", "F"="red")
         ) +
+        scale_x_continuous(
+            limits = c(20, 100)
+            , breaks = seq(20, 80, 10)
+            , labels = seq(20, 80, 10)
+        ) +
+        scale_y_continuous(
+            limits = c(0, 40000)
+            , breaks = seq(0, 40000, 1000)
+            , labels = seq(0, 40000, 1000)
+        ) +
         labs(
             x = '연령'
             , y = '완주시간'
@@ -46,5 +56,5 @@ library('ggplot2')
                 , face = 'bold'
             )
         ) +
-        theme_classic()
+        theme_linedraw()
     
